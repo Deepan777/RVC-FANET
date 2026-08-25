@@ -5,7 +5,7 @@ import seaborn as sns
 from pathlib import Path
 import os
 
-PROJECT = Path(r"D:\VIT Vellore Research one\FANET")
+PROJECT = Path(r".")
 CSV_PATH = PROJECT / "results" / "raw" / "stage2_experiment_matrix.csv"
 FIG_PNG = PROJECT / "figures" / "png"
 FIG_PDF = PROJECT / "figures" / "pdf"

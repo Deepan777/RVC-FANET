@@ -1,6 +1,6 @@
 """
 Stage 2: Corrected Full Experiment Matrix for RVC-FANET
-All outputs go to D:\VIT Vellore Research one\FANET\results\raw\
+All outputs go to .\results\raw\
 
 Runs AODV, PPR, RVC across:
   - Density sweep: 10, 20, 30, 40, 50 nodes
@@ -12,14 +12,14 @@ Runs AODV, PPR, RVC across:
 import subprocess, os, sys, time
 from pathlib import Path
 
-EXE = Path(r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\scratch\ns3.41-rvc-fanet-sim.exe")
-PROJECT = Path(r"D:\VIT Vellore Research one\FANET")
+EXE = Path(r"./ns3 run rvc-fanet-sim")
+PROJECT = Path(r".")
 # ns-3 std::ofstream cannot handle spaces in paths, so we use a staging path
-CSV_STAGING = Path(r"C:\Users\deepa\.gemini\antigravity-ide\scratch\FANET_stage2\results\raw\stage2_experiment_matrix.csv")
+CSV_STAGING = Path(r"./results/staging/stage2_experiment_matrix.csv")
 CSV_FINAL = PROJECT / "results" / "raw" / "stage2_experiment_matrix.csv"
 
 env = os.environ.copy()
-env["PATH"] = r"C:\msys64\mingw64\bin;" + r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\lib;" + env.get("PATH", "")
+env["PATH"] = env.get("PATH", "")
 
 # Remove old staging CSV to start fresh
 if CSV_STAGING.exists():
@@ -36,7 +36,7 @@ def run_sim(protocol, num_nodes, sim_time, speed, tx_range, h_req, alpha, seed):
            f"--alphaRoute={alpha}",
            f"--seed={seed}",
            f"--csvFileName={CSV_STAGING}",
-           f"--calibFile=D:\\VIT Vellore Research one\\FANET\\results\\raw\\nominal_residuals.txt"]
+           f"--calibFile=./results/raw/nominal_residuals.txt"]
     try:
         r = subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=180)
         return r.returncode == 0

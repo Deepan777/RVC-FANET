@@ -34,7 +34,7 @@ axes2[1].set_xticklabels(alpha)
 axes2[1].legend()
 
 plt.tight_layout()
-fig2.savefig('D:/VIT Vellore Research one/FANET/figures/FINAL_RISK_BUDGET_MULTIPANEL.pdf', dpi=300)
+fig2.savefig('./figures/FINAL_RISK_BUDGET_MULTIPANEL.pdf', dpi=300)
 print("Saved Figure 2.")
 
 # ==============================================================================
@@ -68,7 +68,7 @@ axes3[1,1].set_title('D: Mean End-to-End Delay')
 axes3[1,1].set_ylabel('Delay (ms)')
 
 plt.tight_layout()
-fig3.savefig('D:/VIT Vellore Research one/FANET/figures/FINAL_ABLATION_FIGURE.pdf', dpi=300)
+fig3.savefig('./figures/FINAL_ABLATION_FIGURE.pdf', dpi=300)
 print("Saved Figure 3.")
 
 # ==============================================================================
@@ -76,7 +76,7 @@ print("Saved Figure 3.")
 # ==============================================================================
 fig4, axes4 = plt.subplots(1, 2, figsize=(14, 5))
 
-df_density = pd.read_csv('D:/VIT Vellore Research one/FANET/results/raw/stage2_experiment_matrix.csv')
+df_density = pd.read_csv('./results/raw/stage2_experiment_matrix.csv')
 df_density = df_density[df_density['protocol'].isin(['PPR', 'RVC'])]
 palette = {'PPR': 'blue', 'RVC': 'green'}
 
@@ -93,5 +93,5 @@ axes4[1].set_ylabel('Reachability-Normalized PDR')
 axes4[1].set_xticks([10, 20, 30, 40, 50])
 
 plt.tight_layout()
-fig4.savefig('D:/VIT Vellore Research one/FANET/figures/fig4_density_with_baselines.png', dpi=300)
+fig4.savefig('./figures/fig4_density_with_baselines.png', dpi=300)
 print("Saved Figure 4.")

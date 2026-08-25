@@ -1,8 +1,8 @@
 import subprocess, os
 
-EXE = r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\scratch\ns3.41-rvc-fanet-sim.exe"
+EXE = r"./ns3 run rvc-fanet-sim"
 env = os.environ.copy()
-env["PATH"] = r"C:\msys64\mingw64\bin;" + r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\lib;" + env.get("PATH", "")
+env["PATH"] = env.get("PATH", "")
 
 for proto in ["AODV", "PPR", "RVC"]:
     print(f"\nTesting {proto} at 30 m/s")

@@ -116,7 +116,7 @@ def run_audit():
         
     df = pd.DataFrame(results)
     
-    out_path = Path(r"D:\VIT Vellore Research one\FANET\validation\CONFORMAL_OVERCOVERAGE_AUDIT.md")
+    out_path = Path(r".\validation\CONFORMAL_OVERCOVERAGE_AUDIT.md")
     with open(out_path, 'w') as f:
         f.write("# Phase 9: Conformal Overcoverage Audit\n\n")
         f.write("## Date: 2026-08-08\n\n")

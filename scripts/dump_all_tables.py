@@ -1,6 +1,6 @@
 import pandas as pd
 
-CSV_PATH = r"D:\VIT Vellore Research one\FANET\results\raw\stage2_experiment_matrix.csv"
+CSV_PATH = r".\results\raw\stage2_experiment_matrix.csv"
 df = pd.read_csv(CSV_PATH)
 
 # Function to format dataframe

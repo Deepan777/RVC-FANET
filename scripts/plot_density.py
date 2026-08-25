@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('D:/VIT Vellore Research one/FANET/results/raw/stage2_experiment_matrix.csv')
+df = pd.read_csv('./results/raw/stage2_experiment_matrix.csv')
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
 palette = {'AODV': 'grey', 'PPR': 'blue', 'RVC': 'green'}
@@ -24,5 +24,5 @@ axes[1].set_xticks([10, 20, 30, 40, 50])
 axes[1].grid(True, linestyle=':', alpha=0.7)
 
 plt.tight_layout()
-plt.savefig('D:/VIT Vellore Research one/FANET/figures/FINAL_NETWORK_DENSITY.pdf', dpi=300)
+plt.savefig('./figures/FINAL_NETWORK_DENSITY.pdf', dpi=300)
 print("Saved FINAL_NETWORK_DENSITY.pdf")

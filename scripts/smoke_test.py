@@ -8,11 +8,11 @@ Runs one trial per protocol and verifies:
 """
 import subprocess, os, sys
 
-EXE = r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\scratch\ns3.41-rvc-fanet-sim.exe"
-CSV = r"D:\VIT Vellore Research one\FANET\results\raw\smoke_test.csv"
+EXE = r"./ns3 run rvc-fanet-sim"
+CSV = r".\results\raw\smoke_test.csv"
 
 env = os.environ.copy()
-env["PATH"] = r"C:\msys64\mingw64\bin;" + r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\lib;" + env.get("PATH", "")
+env["PATH"] = env.get("PATH", "")
 
 # Remove old CSV
 if os.path.exists(CSV):

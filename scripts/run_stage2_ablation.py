@@ -1,15 +1,15 @@
 import subprocess, os, time
 from pathlib import Path
 
-EXE = Path(r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\scratch\ns3.41-rvc-fanet-sim.exe")
-PROJECT = Path(r"D:\VIT Vellore Research one\FANET")
+EXE = Path(r"./ns3 run rvc-fanet-sim")
+PROJECT = Path(r".")
 # We now dynamically select the calibration file based on speed
 # to ensure valid empirical conformal bounds.
 CSV_FINAL = PROJECT / "results" / "empirical_calibration_stage2" / "raw" / "stage2_ablation.csv"
-CSV_STAGING = Path(r"C:\Users\deepa\.gemini\antigravity-ide\scratch\stage2_ablation.csv")
+CSV_STAGING = Path(r"./results/staging/stage2_ablation.csv")
 
 env = os.environ.copy()
-env["PATH"] = r"C:\msys64\mingw64\bin;" + r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\lib;" + env.get("PATH", "")
+env["PATH"] = env.get("PATH", "")
 
 if CSV_STAGING.exists():
     CSV_STAGING.unlink()

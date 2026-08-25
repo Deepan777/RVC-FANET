@@ -5,15 +5,15 @@ Tests CV (Constant Velocity) and Kalman Filter predictors against
 known trajectories to determine which is actually superior.
 
 Outputs:
-  - D:\VIT Vellore Research one\FANET\validation\KALMAN_AUDIT.md
-  - D:\VIT Vellore Research one\FANET\results\processed\predictor_validation.csv
+  - .\validation\KALMAN_AUDIT.md
+  - .\results\processed\predictor_validation.csv
 """
 
 import numpy as np
 import pandas as pd
 from pathlib import Path
 
-PROJECT = Path(r"D:\VIT Vellore Research one\FANET")
+PROJECT = Path(r".")
 
 # ============================================================
 # Trajectory Generators (ground truth)

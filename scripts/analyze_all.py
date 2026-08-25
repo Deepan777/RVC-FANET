@@ -13,7 +13,7 @@ from scipy import stats as scipy_stats
 import warnings
 warnings.filterwarnings('ignore')
 
-PROJECT = Path(r"D:\VIT Vellore Research one\FANET")
+PROJECT = Path(r".")
 STAGE = PROJECT / "results" / "strengthening_stage"
 FIGS = PROJECT / "figures"
 TABLES = PROJECT / "tables"

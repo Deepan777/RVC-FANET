@@ -1,19 +1,19 @@
 """
 RVC-FANET Strengthening Validation — Unified Experiment Runner
 Executes all 6 tasks sequentially using the instrumented ns-3 simulation.
-All outputs go to D:\VIT Vellore Research one\FANET\
+All outputs go to .\
 """
 import subprocess, os, sys, time, json
 from pathlib import Path
 import shutil
 
-EXE = Path(r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\scratch\ns3.41-rvc-fanet-sim.exe")
-PROJECT = Path(r"D:\VIT Vellore Research one\FANET")
+EXE = Path(r"./ns3 run rvc-fanet-sim")
+PROJECT = Path(r".")
 # Staging area (no spaces in path for ns-3 ofstream)
-STAGING = Path(r"C:\Users\deepa\.gemini\antigravity-ide\scratch\FANET_strengthen")
+STAGING = Path(r"./results/validation")
 
 env = os.environ.copy()
-env["PATH"] = r"C:\msys64\mingw64\bin;" + r"C:\Users\deepa\.gemini\antigravity-ide\scratch\ns-allinone-3.41\ns-3.41\build\lib;" + env.get("PATH", "")
+env["PATH"] = env.get("PATH", "")
 
 SEEDS = list(range(1, 31))  # 30 matched seeds
 
